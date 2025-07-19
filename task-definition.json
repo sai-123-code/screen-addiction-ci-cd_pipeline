@@ -1,0 +1,64 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:893256823692:task-definition/live_screen_addiction:1",
+    "containerDefinitions": [
+        {
+            "name": "url-container",
+            "image": "893256823692.dkr.ecr.us-west-2.amazonaws.com/flask-addiction-app",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "url-container-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "systemControls": []
+        }
+    ],
+    "family": "live_screen_addiction",
+    "executionRoleArn": "arn:aws:iam::893256823692:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2025-07-19T16:37:31.905Z",
+    "registeredBy": "arn:aws:iam::893256823692:user/devops_user_755421_56244",
+    "enableFaultInjection": false,
+    "tags": []
+}
