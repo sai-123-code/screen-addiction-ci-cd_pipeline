@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teenage Smartphone Addiction Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Smartphone Addiction Level Predictor</h1>
+        <form method="post">
+
+            <label>Age: <input type="range" name="Age" min="13" max="25" step="1" oninput="this.nextElementSibling.value = this.value"><output>17</output></label>
+
+            <label>Gender:
+                <select name="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </label>
+
+            <label>Daily Usage Hours: <input type="range" name="Daily_Usage_Hours" min="0" max="15" step="0.5" oninput="this.nextElementSibling.value = this.value"><output>7</output></label>
+
+            <label>Sleep Hours: <input type="range" name="Sleep_Hours" min="0" max="12" step="0.5" oninput="this.nextElementSibling.value = this.value"><output>6</output></label>
+
+            <label>Academic Performance: <input type="range" name="Academic_Performance" min="0" max="100" step="1" oninput="this.nextElementSibling.value = this.value"><output>85</output></label>
+
+            <label>Social Interactions (per day): <input type="range" name="Social_Interactions" min="0" max="20" step="1" oninput="this.nextElementSibling.value = this.value"><output>6</output></label>
+
+            <label>Exercise Hours/Week: <input type="range" name="Exercise_Hours" min="0" max="20" step="1" oninput="this.nextElementSibling.value = this.value"><output>2</output></label>
+
+            <label>Anxiety Level (0–5): <input type="range" name="Anxiety_Level" min="0" max="5" step="1" oninput="this.nextElementSibling.value = this.value"><output>3</output></label>
+
+            <label>Depression Level (0–5): <input type="range" name="Depression_Level" min="0" max="5" step="1" oninput="this.nextElementSibling.value = this.value"><output>2</output></label>
+
+            <label>Self Esteem (0–5): <input type="range" name="Self_Esteem" min="0" max="5" step="1" oninput="this.nextElementSibling.value = this.value"><output>4</output></label>
+
+            <label>Parental Control (0–5): <input type="range" name="Parental_Control" min="0" max="5" step="1" oninput="this.nextElementSibling.value = this.value"><output>1</output></label>
+
+            <label>Screen Time Before Bed (hours): <input type="range" name="Screen_Time_Before_Bed" min="0" max="5" step="0.5" oninput="this.nextElementSibling.value = this.value"><output>1</output></label>
+
+            <label>Phone Checks/Day: <input type="range" name="Phone_Checks_Per_Day" min="0" max="200" step="1" oninput="this.nextElementSibling.value = this.value"><output>80</output></label>
+
+            <label>Apps Used Daily: <input type="range" name="Apps_Used_Daily" min="0" max="50" step="1" oninput="this.nextElementSibling.value = this.value"><output>12</output></label>
+
+            <label>Time on Social Media (hrs): <input type="range" name="Time_on_Social_Media" min="0" max="10" step="0.5" oninput="this.nextElementSibling.value = this.value"><output>3</output></label>
+
+            <label>Time on Gaming (hrs): <input type="range" name="Time_on_Gaming" min="0" max="10" step="0.5" oninput="this.nextElementSibling.value = this.value"><output>2</output></label>
+
+            <label>Time on Education (hrs): <input type="range" name="Time_on_Education" min="0" max="10" step="0.5" oninput="this.nextElementSibling.value = this.value"><output>2</output></label>
+
+            <label>Phone Usage Purpose:
+                <select name="Phone_Usage_Purpose">
+                    <option value="Social Media">Social Media</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Education">Education</option>
+                    <option value="Other">Other</option>
+                </select>
+            </label>
+
+            <label>Family Communication (scale 0–10): <input type="range" name="Family_Communication" min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value"><output>8</output></label>
+
+            <label>Weekend Usage Hours: <input type="range" name="Weekend_Usage_Hours" min="0" max="24" step="1" oninput="this.nextElementSibling.value = this.value"><output>10</output></label>
+
+            <button type="submit">Predict Addiction Level</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            <h3>Predicted Addiction Level: {{ prediction }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
